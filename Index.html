@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de Muertos</title>
+    <!-- Fuentes temáticas -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Patrick+Hand&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #2b103d 0%, #14071f 100%);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow-x: hidden;
+            font-family: 'Patrick Hand', cursive, sans-serif;
+        }
+
+        /* Título naranja estilo Halloween / Día de Muertos */
+        h1 {
+            font-family: 'Creepster', cursive, sans-serif;
+            font-size: 3.2rem;
+            color: #ff9d1c;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px #ff6600, 0 0 30px #ff3300, 3px 3px 5px #000000;
+        }
+
+        /* Cuadro superior con la calaverita literaria */
+        .cuadro-poema {
+            background-color: rgba(25, 10, 36, 0.85);
+            border: 1.5px solid rgba(255, 157, 28, 0.4);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            font-size: 1.35rem;
+            line-height: 1.5;
+            margin: 0;
+            color: #f8f0fc;
+        }
+
+        /* Contenedor de la calavera de Halloween */
+        .contenedor-imagen {
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid #ff9d1c;
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.75);
+            background-color: #1f0b2e;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Texto cortito extra abajo de la imagen */
+        .texto-abajo {
+            font-size: 1.25rem;
+            color: #ffbe0b;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        /* Botón DULCE O TRUCO */
+        button {
+            background-color: #1d1128;
+            color: #ff9d1c;
+            font-family: 'Patrick Hand', cursive, sans-serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: 12px 30px;
+            border: 2px solid #ff9d1c;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 157, 28, 0.4);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        button:hover {
+            background-color: #ff9d1c;
+            color: #14071f;
+            box-shadow: 0 0 25px #ff9d1c;
+            transform: scale(1.07);
+        }
+
+        /* Animación de los dulces que caen */
+        .dulce {
+            position: fixed;
+            top: -50px;
+            font-size: 2rem;
+            user-select: none;
+            pointer-events: none;
+            z-index: 9999;
+            animation: caer linear forwards;
+        }
+
+        @keyframes caer {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Título principal -->
+    <h1>FELIZ DÍA DE MUERTOS</h1>
+
+    <!-- Cuadro con la calaverita literaria -->
+    <div class="cuadro-poema">
+        <p>
+            La calavera en la escuela paseó,<br>
+            buscando al alumno que reprobó,<br>
+            pero al ver que todos saben programar,<br>
+            mejor se sentó a festejar.
+        </p>
+    </div>
+
+    <!-- Imagen de la calavera de Halloween (SVG integrado para que nunca falle el link) -->
+    <div class="contenedor-imagen">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%233a1049'/%3E%3Cstop offset='100%25' stop-color='%23110419'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23g)'/%3E%3C!-- Sombrero de Bruja --%3E%3Cellipse cx='100' cy='58' rx='75' ry='18' fill='%23111' stroke='%23ff9d1c' stroke-width='2'/%3E%3Cpath d='M65 55 Q95 5 125 55 Z' fill='%23222'/%3E%3Crect x='78' y='46' width='44' height='8' fill='%23ff6b00' rx='2'/%3E%3C!-- Cráneo clásico de Halloween --%3E%3Cpath d='M62 78 C62 55 138 55 138 78 C138 100 125 118 120 128 L116 148 L84 148 L80 128 C75 118 62 100 62 78 Z' fill='%23f2eee3'/%3E%3C!-- Ojos huecos siniestros --%3E%3Cpath d='M75 84 Q87 72 97 84 Q87 102 75 84 Z' fill='%23111'/%3E%3Cpath d='M103 84 Q113 72 125 84 Q113 102 103 84 Z' fill='%23111'/%3E%3C!-- Nariz en triángulo --%3E%3Cpolygon points='100,103 94,115 106,115' fill='%23111'/%3E%3C!-- Dentadura de calavera --%3E%3Crect x='88' y='122' width='24' height='18' fill='%23f2eee3' rx='3'/%3E%3Cline x1='88' y1='131' x2='112' y2='131' stroke='%23111' stroke-width='2.5'/%3E%3Cline x1='96' y1='122' x2='96' y2='140' stroke='%23111' stroke-width='2'/%3E%3Cline x1='104' y1='122' x2='104' y2='140' stroke='%23111' stroke-width='2'/%3E%3C!-- Pequeños murciélagos decorativos de fondo --%3E%3Cpath d='M30 40 Q38 30 45 40 Q38 45 35 48 Q32 45 30 40 Z' fill='%23ff9d1c' opacity='0.7'/%3E%3Cpath d='M170 140 Q178 130 185 140 Q178 145 175 148 Q172 145 170 140 Z' fill='%23ff9d1c' opacity='0.7'/%3E%3C/svg%3E" alt="Calavera de Halloween">
+    </div>
+
+    <!-- Texto cortito diferente abajo de la imagen -->
+    <div class="texto-abajo">
+        ¡Cuidado con los sustos y los dulces en este día! 🎃👻
+    </div>
+
+    <!-- Botón Dulce o Truco -->
+    <button onclick="lluviaDeDulces()">DULCE O TRUCO</button>
+
+    <!-- Enlazamos el archivo script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
